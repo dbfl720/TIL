@@ -16,3 +16,4 @@
   - GitHub 처럼 다른 곳에서 접속할 수 있는 공간에 저장되어있는 것을 원격 repo
   - push : 로컬 repo 외 commit 들을 원격 repo에 반영하기 (push)!
 
+됬다!!!
