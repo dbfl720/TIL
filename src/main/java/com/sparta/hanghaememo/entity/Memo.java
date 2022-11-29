@@ -2,7 +2,8 @@ package com.sparta.hanghaememo.entity;
 
 
 
-import com.example.hnghaememo.dto.MemoRequestDto;
+//import com.example.hanghaememo.dto.MemoRequestDto;
+import com.sparta.hanghaememo.dto.MemoRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -32,22 +33,32 @@ public class Memo extends Timestamped {  //Timestamped가 상속이 되어서 �
     private String dates;
 
 
+//    public Memo(String username, String contents) {
+//        this.username = username;
+//        this.contents = contents;
+//    }
 
-
-    public Memo(String username, String contents) {
-        this.username = username;
-        this.contents = contents;
-    }
-
-    public Memo(MemoRequestDto requestDto) {
+    public Memo(MemoRequestDto requestDto) {  //생성자
         this.username = requestDto.getUsername();
         this.contents = requestDto.getContents();
+        this.title = requestDto.getTitle();
+        this.dates = requestDto.getDates();
     }
 
-    public void update(MemoRequestDto memoRequestDto) {
-        this.username = memoRequestDto.getUsername();
-        this.contents = memoRequestDto.getContents();
+    public void update(MemoRequestDto requestDto) {
+        this.username = requestDto.getUsername();
+        this.contents = requestDto.getContents();
+        this.title = requestDto.getTitle();
+
+
     }
-
-
 }
+
+//
+//    public void update(MemoRequestDto memoRequestDto) {
+//        this.username = memoRequestDto.getUsername();
+//        this.contents = memoRequestDto.getContents();
+//    }
+//
+//
+//}
