@@ -29,9 +29,12 @@ public class Memo extends Timestamped {  //Timestamped가 상속이 되어서 �
     private String title;
 
 
-    @Column(nullable = false)
-    private String dates;
+//    @Column(nullable = false)
+//    private String dates;
 
+
+    @Column(nullable = false)
+    private String password;
 
 //    public Memo(String username, String contents) {
 //        this.username = username;
@@ -42,13 +45,14 @@ public class Memo extends Timestamped {  //Timestamped가 상속이 되어서 �
         this.username = requestDto.getUsername();
         this.contents = requestDto.getContents();
         this.title = requestDto.getTitle();
-        this.dates = requestDto.getDates();
+        this.password = requestDto.getPassword();
     }
 
     public void update(MemoRequestDto requestDto) {
         this.username = requestDto.getUsername();
         this.contents = requestDto.getContents();
         this.title = requestDto.getTitle();
+        this.password = requestDto.getPassword();
 
 
     }

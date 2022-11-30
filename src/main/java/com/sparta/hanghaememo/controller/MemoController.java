@@ -1,4 +1,7 @@
+//메서드가 들어가는 파일
+
 package com.sparta.hanghaememo.controller;
+
 
 
 import com.sparta.hanghaememo.dto.MemoRequestDto;
@@ -41,7 +44,8 @@ public class MemoController {
 
 
     @GetMapping("/api/memo") //@RequestParam 받는 값이 api/memo?id=3 , @PathVariable 받는 값이 api/memo/3
-    public MemoResponseDto getMemo(@PathVariable Long id){
+    public MemoResponseDto getMemo(@RequestParam Long id){
+
         return memoService.getMemo(id);
     }
 
@@ -50,15 +54,17 @@ public class MemoController {
 
 
     @PutMapping("/api/memos/{id}")   //PathVariable 사용해서 값을 받아오기, RequestBody 부분에 있는 데이터를 가져오
-    public Long updateMemo(@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {
+    public MemoResponseDto updateMemo(@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {
         return memoService.update(id, requestDto);
     }
 
 
 
-    @DeleteMapping("/api/memos/{id}")
-    public Long deleteMemo(@PathVariable Long id){
-        return memoService.deleteMemo(id);
+    @DeleteMapping("/api/memos/{id}/{password}")
+    public String deleteMemo(@PathVariable Long id, @PathVariable String password){ //중요한 정보를 줄 ㅗ받음
+        System.out.println("password controller = " + password);
+                
+        return memoService.deleteMemo(id, password);
     }
 }
 //    매핑의 URL에 { } 로 들어가는 패스 변수(path variable)를 받는다.
