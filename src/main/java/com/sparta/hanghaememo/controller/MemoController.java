@@ -43,8 +43,8 @@ public class MemoController {
 
 
 
-    @GetMapping("/api/memo") //@RequestParam 받는 값이 api/memo?id=3 , @PathVariable 받는 값이 api/memo/3
-    public MemoResponseDto getMemo(@RequestParam Long id){
+    @GetMapping("/api/memo/{id}") //@RequestParam 받는 값이 api/memo?id=3 , @PathVariable 받는 값이 api/memo/3
+    public MemoResponseDto getMemo(@PathVariable Long id){
 
         return memoService.getMemo(id);
     }
