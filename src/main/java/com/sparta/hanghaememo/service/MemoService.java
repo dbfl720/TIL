@@ -1,17 +1,20 @@
+
+
 package com.sparta.hanghaememo.service;
 
 
-import com.sparta.hanghaememo.dto.MemoRequestDto;
-import com.sparta.hanghaememo.dto.MemoResponseDto;
-import com.sparta.hanghaememo.entity.Memo;
-import com.sparta.hanghaememo.repository.MemoRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+        import com.sparta.hanghaememo.dto.MemoRequestDto;
+        import com.sparta.hanghaememo.dto.MemoResponseDto;
+        import com.sparta.hanghaememo.entity.Memo;
+        import com.sparta.hanghaememo.repository.MemoRepository;
+        import lombok.RequiredArgsConstructor;
+        import org.springframework.http.HttpStatus;
+        import org.springframework.stereotype.Service;
+        import org.springframework.transaction.annotation.Transactional;
 
 
-import java.util.List;
+
+        import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -68,7 +71,7 @@ public class MemoService {
 
 
         @Transactional
-        public String deleteMemo (Long id,String password) {
+        public MemoResponseDto deleteMemo (Long id,String password) {
             Memo memo = memoRepository.findById(id).orElseThrow(
                     () -> new IllegalArgumentException("게시글을 찾을 수 없다.")
             );
@@ -82,13 +85,13 @@ public class MemoService {
                 memoRepository.deleteById(id);
 //                return memoResponseDto;
 
-//                return new MemoResponseDto("게시글 삭제 성공", HttpStatus.OK.value());
-                return "성공";
+                return new MemoResponseDto("게시글 삭제 성공", HttpStatus.OK.value());
+//                return "성공";
             } else {
 
-                return "실패";
+//                return "실패";
 //                return memoResponseDto;
-              //  return new MemoResponseDto("비밀번호가 일치하지 않습니다.", HttpStatus.UNAUTHORIZED.value());
+                return new MemoResponseDto("비밀번호가 일치하지 않습니다.", HttpStatus.UNAUTHORIZED.value());
             }
         }
 

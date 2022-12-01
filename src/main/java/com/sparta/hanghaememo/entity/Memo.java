@@ -1,3 +1,5 @@
+
+
 package com.sparta.hanghaememo.entity;
 
 
@@ -57,7 +59,7 @@ public class Memo extends Timestamped {  //Timestamped가 상속이 되어서 �
 
     }
 }
-
+//
 //
 //    public void update(MemoRequestDto memoRequestDto) {
 //        this.username = memoRequestDto.getUsername();
@@ -65,4 +67,3 @@ public class Memo extends Timestamped {  //Timestamped가 상속이 되어서 �
 //    }
 //
 //
-//}

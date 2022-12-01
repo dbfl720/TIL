@@ -6,17 +6,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
-//@Setter
-//@NoArgsConstructor
+@Setter
+@NoArgsConstructor
 public class MemoRequestDto {
     private String username;   //객체
     private String contents;
     private String title;
     private String password;
+
+
 }
 
-
-//
 //    @NotBlank(message = "비밀번호 확인을 입력해주세요")
 //    private String checkpw;
 //
